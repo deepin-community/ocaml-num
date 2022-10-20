@@ -1,0 +1,2 @@
+Tests: test-num
+Depends: ocaml-nox, ocaml-findlib, libnum-ocaml-dev

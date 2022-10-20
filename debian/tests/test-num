@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+outdir=${ADT_ARTIFACTS-/tmp/ocaml-num}
+indir="debian/tests"
+input="test_num.ml"
+mkdir -p ${outdir}
+cp ${indir}/${input} ${outdir}
+cd ${outdir}
+
+ocamlfind ocamlc -package num -linkpkg -o test_num.byte test_num.ml
+./test_num.byte
+
+if [ -x /usr/bin/ocamlopt ]; then
+    ocamlfind ocamlopt -package num -linkpkg -o test_num.opt test_num.ml
+    ./test_num.opt
+fi

@@ -1,0 +1,4 @@
+@OCamlDllDir@
+@OCamlStdlibDir@/num/META
+@OCamlStdlibDir@/*.cma
+OPT: @OCamlStdlibDir@/*.cmxs

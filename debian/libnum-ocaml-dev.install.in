@@ -1,0 +1,7 @@
+@OCamlStdlibDir@/num-top
+@OCamlStdlibDir@/*.mli
+@OCamlStdlibDir@/*.cmi
+@OCamlStdlibDir@/*.cmti
+@OCamlStdlibDir@/*.a
+OPT: @OCamlStdlibDir@/*.cmx
+OPT: @OCamlStdlibDir@/*.cmxa

@@ -1,0 +1,63 @@
+Source: ocaml-num
+Priority: optional
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Uploaders:
+ Stéphane Glondu <glondu@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-ocaml,
+ ocaml-nox (>= 4.08),
+ ocaml-findlib
+Rules-Requires-Root: no
+Standards-Version: 4.5.1
+Section: ocaml
+Homepage: https://github.com/ocaml/num
+Vcs-Git: https://salsa.debian.org/ocaml-team/ocaml-num.git
+Vcs-Browser: https://salsa.debian.org/ocaml-team/ocaml-num
+
+Package: libnum-ocaml-dev
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Recommends: ocaml-findlib
+Breaks: ocaml-nox (<< 4.08)
+Replaces: ocaml-nox (<< 4.08)
+Description: library for arbitrary-precision and rational arithmetic (development)
+ This OCaml library implements arbitrary-precision arithmetic on big
+ integers and on rationals.
+ .
+ This is a legacy library. It used to be part of the core OCaml
+ distribution (in otherlibs/num) but is now distributed separately. New
+ applications that need arbitrary-precision arithmetic should use the
+ Zarith library (https://github.com/ocaml/Zarith) instead of the Num
+ library, and older applications that already use Num are encouraged to
+ switch to Zarith. Zarith delivers much better performance than Num and
+ has a nicer API.
+ .
+ This package contains development files.
+
+Package: libnum-ocaml
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Breaks: ocaml-base-nox (<< 4.08), libfindlib-ocaml (<< 1.8)
+Replaces: ocaml-base-nox (<< 4.08), libfindlib-ocaml (<< 1.8)
+Description: library for arbitrary-precision and rational arithmetic (runtime)
+ This OCaml library implements arbitrary-precision arithmetic on big
+ integers and on rationals.
+ .
+ This is a legacy library. It used to be part of the core OCaml
+ distribution (in otherlibs/num) but is now distributed separately. New
+ applications that need arbitrary-precision arithmetic should use the
+ Zarith library (https://github.com/ocaml/Zarith) instead of the Num
+ library, and older applications that already use Num are encouraged to
+ switch to Zarith. Zarith delivers much better performance than Num and
+ has a nicer API.
+ .
+ This package contains runtime files.
